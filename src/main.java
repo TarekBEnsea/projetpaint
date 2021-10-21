@@ -1,5 +1,8 @@
 public class main {
     public static void main(String[] args){
-        System.out.println("Hello world");
+        point t = new point();
+        point z = new point(1,2);
+        System.out.println(t);
+        System.out.println(z);
     }
 }
