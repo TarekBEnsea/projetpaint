@@ -1,15 +1,14 @@
 import java.awt.*;
 
-public class Rectangle extends Figure{
+public class Ellipse extends Figure{
+    int semiAxesX = 0, SemiAxesY = 0;
 
-    public Rectangle(Color cl, point pt) {
+    public Ellipse(Color cl, point pt) {
         super(cl, pt);
     }
 
     @Override
     public void setBoundingBox(int lengthB, int widthB) {
-        length = lengthB;
-        width = widthB;
     }
 
     @Override

@@ -1,8 +1,8 @@
 import java.awt.*;
 
 abstract class Figure {
-    private Integer width=0;
-    private Integer length=0;
+    protected Integer width=0;
+    protected Integer length=0;
     private Color c;
     private point p;
 
