@@ -1,6 +1,6 @@
 import java.awt.*;
 
-abstract class Rectangle extends Figure{
+class Rectangle extends Figure{
     protected Integer width=0;
     protected Integer length=0;
     public Rectangle(Color cl, point pt) {
@@ -16,5 +16,13 @@ abstract class Rectangle extends Figure{
     @Override
     public void draw(Graphics g) {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "width=" + width +
+                ", length=" + length +
+                '}';
     }
 }

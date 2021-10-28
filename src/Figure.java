@@ -17,7 +17,7 @@ abstract class Figure {
         this.p = pt;
     }
 
-    public abstract void setBoundingBox(int lengthB, int widthB);
+    public abstract void setBoundingBox(int lengthBB, int widthBB);
     public abstract void draw(Graphics g);
 
     @Override

@@ -1,6 +1,6 @@
 import java.awt.*;
 
-abstract class Ellipse extends Figure{
+class Ellipse extends Figure{
     protected int SemiAxesX = 0, SemiAxesY = 0;
 
     public Ellipse(Color cl, point pt) {
@@ -16,5 +16,13 @@ abstract class Ellipse extends Figure{
     @Override
     public void draw(Graphics g) {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Ellipse{" +
+                "SemiAxesX=" + SemiAxesX +
+                ", SemiAxesY=" + SemiAxesY +
+                '}';
     }
 }
