@@ -1,7 +1,7 @@
 import java.awt.*;
 
-public class Ellipse extends Figure{
-    int semiAxesX = 0, SemiAxesY = 0;
+abstract class Ellipse extends Figure{
+    protected int SemiAxesX = 0, SemiAxesY = 0;
 
     public Ellipse(Color cl, point pt) {
         super(cl, pt);
@@ -9,6 +9,8 @@ public class Ellipse extends Figure{
 
     @Override
     public void setBoundingBox(int lengthB, int widthB) {
+        SemiAxesY = widthB/2;
+        SemiAxesX = lengthB/2;
     }
 
     @Override

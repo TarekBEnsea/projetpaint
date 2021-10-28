@@ -1,11 +1,10 @@
 import java.awt.*;
 
-public class Rectangle extends Figure{
-    int px,py;
+abstract class Rectangle extends Figure{
+    protected Integer width=0;
+    protected Integer length=0;
     public Rectangle(Color cl, point pt) {
         super(cl, pt);
-        px = getP().getX();
-        py = getP().getY();
     }
 
     @Override

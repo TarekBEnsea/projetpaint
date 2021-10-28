@@ -1,8 +1,6 @@
 import java.awt.*;
 
 abstract class Figure {
-    protected Integer width=0;
-    protected Integer length=0;
     private Color c;
     private point p;
 
@@ -25,8 +23,6 @@ abstract class Figure {
     @Override
     public String toString() {
         return "Figure{" +
-                "width=" + width +
-                ", length=" + length +
                 ", c=" + c +
                 ", p=" + p +
                 '}';
