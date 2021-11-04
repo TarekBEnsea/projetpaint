@@ -3,8 +3,8 @@ import java.awt.*;
 class Ellipse extends Figure{
     protected int SemiAxesX = 0, SemiAxesY = 0;
 
-    public Ellipse(Color cl, point pt) {
-        super(cl, pt);
+    public Ellipse(Color cl,int px, int py) {
+        super(cl,new point(px, py));
     }
 
     @Override

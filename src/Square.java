@@ -1,8 +1,8 @@
 import java.awt.*;
 
 public class Square extends Rectangle{
-    public Square(Color cl, point pt) {
-        super(cl, pt);
+    public Square(Color cl,int px, int py) {
+        super(cl, px, py);
 
     }
 

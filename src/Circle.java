@@ -1,8 +1,8 @@
 import java.awt.*;
 
 public class Circle extends Ellipse{
-    public Circle(Color cl, point pt) {
-        super(cl, pt);
+    public Circle(Color cl, int px, int py) {
+        super(cl, px, py);
     }
 
     @Override

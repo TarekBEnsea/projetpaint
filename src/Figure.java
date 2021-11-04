@@ -1,8 +1,9 @@
 import java.awt.*;
 
-abstract class Figure {
+public abstract class Figure {
     private Color c;
     private point p;
+
 
     public Color getC() {
         return c;
@@ -17,8 +18,8 @@ abstract class Figure {
         this.p = pt;
     }
 
-    public abstract void setBoundingBox(int lengthBB, int widthBB);
-    public abstract void draw(Graphics g);
+    protected abstract void setBoundingBox(int lengthBB, int widthBB);
+    protected abstract void draw(Graphics g);
 
     @Override
     public String toString() {

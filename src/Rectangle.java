@@ -3,8 +3,8 @@ import java.awt.*;
 class Rectangle extends Figure{
     protected Integer width=0;
     protected Integer length=0;
-    public Rectangle(Color cl, point pt) {
-        super(cl, pt);
+    public Rectangle(Color cl,int px, int py) {
+        super(cl,new point(px,py));
     }
 
     @Override
