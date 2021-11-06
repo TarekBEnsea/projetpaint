@@ -2,20 +2,20 @@ import java.awt.*;
 
 public abstract class Figure {
     private Color c;
-    private point p;
+    private point O;
 
 
     public Color getC() {
         return c;
     }
 
-    public point getP() {
-        return p;
+    public point getO() {
+        return O;
     }
 
     public Figure(Color cl, point pt) {
         this.c = cl;
-        this.p = pt;
+        this.O = pt;
     }
 
     protected abstract void setBoundingBox(int lengthBB, int widthBB);
@@ -25,7 +25,7 @@ public abstract class Figure {
     public String toString() {
         return "Figure{" +
                 ", c=" + c +
-                ", p=" + p +
+                ", p=" + O +
                 '}';
     }
 }
