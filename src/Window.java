@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Window extends JFrame implements ActionListener {
+    Drawing Draw = new Drawing();
 
     public Window(String Title, int x, int y)
     {
@@ -107,40 +108,51 @@ public class Window extends JFrame implements ActionListener {
         {
             case "Noir" :
                 System.out.println("color is black");
+                Draw.setC(Color.black);
                 break;
             case "Rouge" :
                 System.out.println("color is red");
+                Draw.setC(Color.red);
                 break;
             case "Vert" :
                 System.out.println("color is green");
+                Draw.setC(Color.green);
                 break;
             case "Bleu" :
                 System.out.println("color is blue");
+                Draw.setC(Color.blue);
                 break;
             case "Ellipse" :
                 System.out.println("figure is an ellipse");
+                Draw.setNameFigure("Ellipse");
                 break;
             case "Cercle" :
                 System.out.println("figure is a circle");
+                Draw.setNameFigure("Circle");
                 break;
             case "Jaune" :
                 System.out.println("color is yellow");
+                Draw.setC(Color.yellow);
                 break;
             case "Rose" :
                 System.out.println("color is pink");
+                Draw.setC(Color.pink);
                 break;
             case "Magenta" :
                 System.out.println("color is magenta");
+                Draw.setC(Color.magenta);
                 break;
             case "Orange" :
                 System.out.println("color is orange");
-
+                Draw.setC(Color.orange);
                 break;
             case "Rectangle" :
                 System.out.println("figure is a rectangle");
+                Draw.setNameFigure("Rectangle");
                 break;
             case "Carre" :
                 System.out.println("figure is a square");
+                Draw.setNameFigure("Square");
                 break;
             case "Information" :
                 System.out.println("Information has been selected");

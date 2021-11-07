@@ -7,10 +7,11 @@ import java.util.ArrayList;
 public class Drawing extends JPanel implements MouseMotionListener {
 
 
-
     private Color c;
     private String nameFigure;
     private ArrayList<Figure> ListFigures = null;
+    private point
+
 
     public Drawing(){
         super();
@@ -29,9 +30,13 @@ public class Drawing extends JPanel implements MouseMotionListener {
         this.c = c;
     }
 
+    public void setNameFigure(String nameFigure) {
+        this.nameFigure = nameFigure;
+    }
+
     @Override
     public void mouseDragged(MouseEvent e) {
-
+        second =
     }
 
     @Override
