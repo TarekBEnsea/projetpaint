@@ -1,8 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
-public class Drawing extends JPanel {
+public class Drawing extends JPanel implements MouseMotionListener {
+
 
 
     private Color c;
@@ -15,5 +18,24 @@ public class Drawing extends JPanel {
         ListFigures = new ArrayList<Figure>();
         this.c = Color.white;
         this.nameFigure = null;
+        addMouseMotionListener(this);
+    }
+
+    public Color getC() {
+        return c;
+    }
+
+    public void setC(Color c) {
+        this.c = c;
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+
     }
 }
