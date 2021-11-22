@@ -16,7 +16,8 @@ class Rectangle extends Figure{
 
     @Override
     public void draw(Graphics g) {
-
+        g.setColor(c);
+        g.fillRect(O.getX(), O.getY(), width,length);
     }
 
     @Override

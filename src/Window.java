@@ -88,6 +88,7 @@ public class Window extends JFrame implements ActionListener {
 
 
         contentPanel.add(southPanel,"South");
+        contentPanel.add(Draw);
         this.setJMenuBar(m);
         this.setVisible(true);
 

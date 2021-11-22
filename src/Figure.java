@@ -1,8 +1,8 @@
 import java.awt.*;
 
 public abstract class Figure {
-    private Color c;
-    private point O;
+    protected Color c;
+    protected point O;
 
 
     public Color getC() {
