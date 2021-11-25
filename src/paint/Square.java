@@ -8,15 +8,15 @@ public class Square extends Rectangle{
     }
 
     @Override
-    public void setBoundingBox(int lengthBB, int widthBB) {
-        super.setBoundingBox(lengthBB, widthBB);
-        if(lengthBB > widthBB){
-            length = widthBB;
-            width = widthBB;
-        }
-        else{
+    public void setBoundingBox(int widthBB, int lengthBB) {
+        super.setBoundingBox(widthBB, lengthBB);
+        if(widthBB > lengthBB){
             length = lengthBB;
             width = lengthBB;
+        }
+        else{
+            length = widthBB;
+            width = widthBB;
         }
     }
 
