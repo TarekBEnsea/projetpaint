@@ -3,8 +3,8 @@ import java.io.Serializable;
 
 public class point implements Serializable {
 
-    private Integer X=0;
-    private Integer Y=0;
+    private int X=0;
+    private int Y=0;
 
     public point() {
         this.X = 0;

@@ -164,6 +164,17 @@ public class Window extends JFrame implements ActionListener {
                 JOptionPane info = new JOptionPane();
                 info.showInternalMessageDialog(info, "Autor: Tarek Bache", "information", JOptionPane.INFORMATION_MESSAGE);
                 break;
+            case "Save" :
+                JFileChooser chooser2 = new JFileChooser();
+                int userSelection2 = chooser2.showSaveDialog(this);
+                if (userSelection2 == JFileChooser.APPROVE_OPTION) {
+                    String fileToSave = chooser2.getSelectedFile().getAbsolutePath();
+                    Draw.save(fileToSave);
+                } else {
+                    System.out.println("Save has been cancelled");
+                }
+                System.out.println("Save has been selected");
+                break;
         }
 
     }

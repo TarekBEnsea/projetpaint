@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.io.FileOutputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class Drawing extends JPanel implements MouseMotionListener, MouseListener {
@@ -17,9 +20,7 @@ public class Drawing extends JPanel implements MouseMotionListener, MouseListene
     Figure fig;
 
 
-
-
-    public Drawing(){
+    public Drawing() {
         super();
         this.setBackground(Color.white);
         this.ListFigures = new ArrayList<>();
@@ -35,7 +36,7 @@ public class Drawing extends JPanel implements MouseMotionListener, MouseListene
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         this.setBackground(Color.white);
-        for(Figure f : ListFigures){
+        for (Figure f : ListFigures) {
             f.draw(g);
             System.out.println(f);
         }
@@ -51,8 +52,6 @@ public class Drawing extends JPanel implements MouseMotionListener, MouseListene
     }
 
 
-
-
     @Override
     public void mouseMoved(MouseEvent e) {
 
@@ -66,8 +65,8 @@ public class Drawing extends JPanel implements MouseMotionListener, MouseListene
     @Override
     public void mouseDragged(MouseEvent e) {
         second = new point(e.getX(), e.getY());
-        fig = ListFigures.get(ListFigures.size()-1);
-        fig.setBoundingBox(premier,second);
+        fig = ListFigures.get(ListFigures.size() - 1);
+        fig.setBoundingBox(second.getX()-premier.getX(), second.getY()-premier.getY());
         repaint();
 
     }
@@ -75,18 +74,18 @@ public class Drawing extends JPanel implements MouseMotionListener, MouseListene
     @Override
     public void mousePressed(MouseEvent e) {
         premier = new point(e.getX(), e.getY());
-        switch(nameFigure){
-            case "Rectangle" :
-                ListFigures.add(fig = new Rectangle(col,premier.getX(),premier.getY()));
+        switch (nameFigure) {
+            case "Rectangle":
+                ListFigures.add(fig = new Rectangle(col, premier.getX(), premier.getY()));
                 break;
-            case "Ellipse" :
-                ListFigures.add(fig = new Ellipse(col,premier.getX(),premier.getY()));
+            case "Ellipse":
+                ListFigures.add(fig = new Ellipse(col, premier.getX(), premier.getY()));
                 break;
-            case "Square" :
-                ListFigures.add(fig = new Square(col,premier.getX(),premier.getY()));
+            case "Square":
+                ListFigures.add(fig = new Square(col, premier.getX(), premier.getY()));
                 break;
-            case "Circle" :
-                ListFigures.add(fig = new Circle(col,premier.getX(),premier.getY()));
+            case "Circle":
+                ListFigures.add(fig = new Circle(col, premier.getX(), premier.getY()));
                 break;
         }
         System.out.println(ListFigures);
@@ -105,6 +104,10 @@ public class Drawing extends JPanel implements MouseMotionListener, MouseListene
 
     @Override
     public void mouseExited(MouseEvent e) {
+
+    }
+
+    public void save(String fileToSave) {
 
     }
 }

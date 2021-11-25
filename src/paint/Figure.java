@@ -24,7 +24,6 @@ public abstract class Figure implements Serializable {
     }
 
     protected abstract void setBoundingBox(int lengthBB, int widthBB);
-    protected abstract void setBoundingBox(point un, point deux);
     protected abstract void draw(Graphics g);
 
     @Override

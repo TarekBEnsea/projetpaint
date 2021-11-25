@@ -18,35 +18,23 @@ class Ellipse extends Figure{
         SemiAxesY = lengthB;
     }
 
-    @Override
-    protected void setBoundingBox(point prem, point sec) {
-        if(sec.getX()>prem.getX() & sec.getY() > prem.getX()){// en bas à droite
-            premb = new point(prem.getX(),prem.getY());
-            secb = new point(sec.getX(),sec.getY());
-
-        }
-        else if(sec.getX() > prem.getX() & sec.getY() < prem.getY()){// en haut à droite
-            premb = new point(prem.getX(),sec.getY());
-            secb = new point(sec.getX(),prem.getY());
-
-        }
-        else if(sec.getX() < prem.getX() & sec.getY() < prem.getY()){//en haut à gauche
-            premb = new point(sec.getX(),sec.getY());
-            secb = new point(prem.getX(),prem.getY());
-        }
-        else if(sec.getX() < prem.getX() & sec.getY() > prem.getY()){// en bas à gauche
-            premb = new point(sec.getX(),prem.getY());
-            secb = new point(prem.getX(),sec.getY());
-        }
-        super.O = premb;
-        SemiAxesX = secb.getX()- premb.getX();
-        SemiAxesY = secb.getY()- premb.getY();
-    }
 
     @Override
     public void draw(Graphics g) {
         g.setColor(c);
-        g.fillOval(O.getX(), O.getY(), SemiAxesX,SemiAxesY);
+        int x = O.getX();
+        int y = O.getY();
+        if (SemiAxesX > 0 & SemiAxesY < 0) {// en haut à droite
+            y += SemiAxesY;
+        }
+        else if (SemiAxesX <  0 & SemiAxesY < 0) {// en haut à gauche
+            x += SemiAxesX;
+            y += SemiAxesY;
+        }
+        if (SemiAxesX <  0 & SemiAxesY > 0) {// en bas à gauche
+            x += SemiAxesX;
+        }
+        g.fillOval(x, y, Math.abs(SemiAxesX), Math.abs(SemiAxesY));
     }
 
     @Override
