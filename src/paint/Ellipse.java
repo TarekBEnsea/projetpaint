@@ -13,7 +13,7 @@ class Ellipse extends Figure{
     }
 
     @Override
-    public void setBoundingBox(int lengthB, int widthB) {
+    public void setBoundingBox(int widthB, int lengthB) {
         SemiAxesX = widthB;
         SemiAxesY = lengthB;
     }
