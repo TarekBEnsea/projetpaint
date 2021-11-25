@@ -1,4 +1,7 @@
-public class point {
+package paint;
+import java.io.Serializable;
+
+public class point implements Serializable {
 
     private Integer X=0;
     private Integer Y=0;

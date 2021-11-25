@@ -1,9 +1,14 @@
+package paint;
 import java.awt.*;
+import java.io.Serializable;
 
-public abstract class Figure {
+public abstract class Figure implements Serializable {
     protected Color c;
     protected point O;
 
+    public void setC(Color c) {this.c = c;}
+
+    public void setO(point o) {O = o;}
 
     public Color getC() {
         return c;
@@ -19,6 +24,7 @@ public abstract class Figure {
     }
 
     protected abstract void setBoundingBox(int lengthBB, int widthBB);
+    protected abstract void setBoundingBox(point un, point deux);
     protected abstract void draw(Graphics g);
 
     @Override

@@ -1,7 +1,11 @@
+package paint;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JPanel;
+
 
 public class Window extends JFrame implements ActionListener {
     Drawing Draw = new Drawing();
@@ -105,7 +109,7 @@ public class Window extends JFrame implements ActionListener {
 
         String cmd = e.getActionCommand();
 
-        switch (cmd)
+        switch(cmd)
         {
             case "Noir" :
                 System.out.println("color is black");

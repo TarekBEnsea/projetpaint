@@ -1,3 +1,4 @@
+package paint;
 import java.awt.*;
 
 public class Circle extends Ellipse{
@@ -8,8 +9,8 @@ public class Circle extends Ellipse{
     @Override
     public void setBoundingBox(int lengthB, int widthB) {
         super.setBoundingBox(lengthB, widthB);
-        SemiAxesX = lengthB/2;
-        SemiAxesY = widthB/2;
+        SemiAxesX = lengthB;
+        SemiAxesY = widthB;
         if(SemiAxesX >SemiAxesY){
             SemiAxesY = SemiAxesX;
         }
