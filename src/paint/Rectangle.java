@@ -26,7 +26,6 @@ class Rectangle extends Figure{
         int x = O.getX();
         int y = O.getY();
         if (width > 0 & length < 0) {// en haut à droite
-
             y += length;
         }
         else if (width <  0 & length < 0) {// en haut à gauche
