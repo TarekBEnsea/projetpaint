@@ -5,12 +5,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 
 
 public class Window extends JFrame implements ActionListener {
     Drawing Draw = new Drawing();
-
+    public ArrayList<Window> ListWin;
+    public int i;
+    private Window win;
     public Window(String Title, int x, int y)
     {
         super(Title);
@@ -109,7 +112,6 @@ public class Window extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         String cmd = e.getActionCommand();
-
         switch(cmd)
         {
             case "Noir" :
@@ -165,8 +167,22 @@ public class Window extends JFrame implements ActionListener {
                 JOptionPane info = new JOptionPane();
                 info.showInternalMessageDialog(info, "Autor: Tarek Bache", "information", JOptionPane.INFORMATION_MESSAGE);
                 break;
+            case "New":
+                System.out.println("New has been selected");
+                i++;
+                System.out.println(i);
+                ListWin.add(win = new Window("Paint"+i,800,600));
+                break;
+            case "Quit" :
+                System.out.println("Quit has been selected");
+                System.exit(0);
             case "Save" :
-
+                    Draw.save();
+                System.out.println("save selected");
+                break;
+            case "Open" :
+                    Draw.open();
+                System.out.println("open selected");
                 break;
         }
 

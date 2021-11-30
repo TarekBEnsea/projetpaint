@@ -5,9 +5,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.io.FileOutputStream;
-import java.io.ObjectOutput;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 
 public class Drawing extends JPanel implements MouseMotionListener, MouseListener {
@@ -88,8 +86,6 @@ public class Drawing extends JPanel implements MouseMotionListener, MouseListene
                 ListFigures.add(fig = new Circle(col, premier.getX(), premier.getY()));
                 break;
         }
-        System.out.println(ListFigures);
-
     }
 
     @Override
@@ -108,12 +104,35 @@ public class Drawing extends JPanel implements MouseMotionListener, MouseListene
     }
 
     public void save() {
+        JFileChooser file = new JFileChooser();
+        if (file.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+            file.getSelectedFile().getAbsolutePath();}
         try{
-            FileOutputStream fos = new FileOutputStream("sauveDessin");
+            FileOutputStream fos = new FileOutputStream(file.getSelectedFile().getAbsolutePath());
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(ListFigures);
+            oos.close();
         }
         catch(Exception e){
-
+            System.out.println("Problème !");
         }
-
+    }
+    public void open(){
+        JFileChooser file = new JFileChooser();
+        if (file.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            file.getSelectedFile().getAbsolutePath();
+        }
+        try {
+            FileInputStream fis = new FileInputStream(file.getSelectedFile().getAbsolutePath());
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            this.ListFigures.clear();
+            paintComponent((this.getGraphics()));
+            ListFigures = (ArrayList<Figure>) ois.readObject();
+            repaint();
+            ois.close();
+        }
+        catch (Exception e){
+            System.out.println("Problème !");
+        }
     }
 }
